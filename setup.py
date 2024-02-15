@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='decisiontree_lite',
-    version='0.0.1',
+    version='0.0.2',
     author='Harisiva R G',
     author_email='harisivarg@gmail.com',
     description='A custom implementation of decision tree classifier.',
