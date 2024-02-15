@@ -26,7 +26,7 @@ Make sure the labels are numeric(Use label encoder).
 from decisiontree_lite.decisiontree import DecisionTree
 from decisiontree_lite.utils import load_data, train_test, model_metrics
 
-# You can use one of inbuilt datasets('iris','wine','rice','raisin') or an external dataset of your choice  
+# You can use one of inbuilt datasets('iris', 'digits', 'breast_cancer', 'wine') or an external dataset of your choice  
 X, y = load_data('iris')
 
 # Perform test train split

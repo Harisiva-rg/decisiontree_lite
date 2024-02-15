@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score,precision_score,recall_score,f1_score,confusion_matrix
 from sklearn.preprocessing import LabelEncoder
-from sklearn.datasets import load_iris, load_wine
+from sklearn.datasets import load_iris, load_wine,load_digits, load_breast_cancer
 import time
 import warnings
 import tracemalloc
@@ -18,20 +18,19 @@ import tracemalloc
 # To load the mentioned dataset.
 def load_data(dataset):
     encoder = LabelEncoder()
-    if dataset == 'raisin':
-        raisin_data = pd.read_excel('decisiontree_lite\datasets\Raisin_Dataset.xlsx', sheet_name= 0)
-        # 0 is 'Besni' and 1 is 'Kecimen'
-        raisin_data['Class'] = encoder.fit_transform(raisin_data['Class'])
-        X, y = np.array(raisin_data.drop('Class', axis =1)), np.array(raisin_data['Class'])
-    elif dataset == 'rice':
-        rice_data = pd.read_excel('decisiontree_lite\datasets\Rice_Dataset.xlsx', sheet_name= 0)
-        # 0 is 'Cammeo' and 1 is 'Osmancik'
-        rice_data['Class'] = encoder.fit_transform(rice_data['Class'])
-        X, y = np.array(rice_data.drop('Class', axis =1)), np.array(rice_data['Class'])
-
-    elif dataset == 'iris':
+    if dataset == 'iris':
         iris_data = load_iris(return_X_y=False)
         X, y = iris_data['data'], iris_data['target']
+        y = encoder.fit_transform(y)
+
+    if dataset == 'digits':
+        digits_data = load_digits(return_X_y=False)
+        X, y = digits_data['data'], digits_data['target']
+        y = encoder.fit_transform(y)
+
+    elif dataset == 'breast_cancer':
+        breast_cancer_data = load_breast_cancer(return_X_y=False)
+        X, y = breast_cancer_data['data'], breast_cancer_data['target']
         y = encoder.fit_transform(y)
 
     elif dataset == 'wine':
@@ -39,7 +38,7 @@ def load_data(dataset):
         X, y = wine_data['data'], wine_data['target']
         y = encoder.fit_transform(y)
     else:
-        raise ValueError("Invalid dataset; choose from 'iris', 'raisin', 'rice', 'wine'")
+        raise ValueError("Invalid dataset; choose from 'iris', 'digits', 'breast_cancer', 'wine'")
     return X, y
 
 # To validate input datatype
