@@ -2,24 +2,24 @@
 
 ## Overview
 
-This repository contains a Python implementation of a decision tree algorithm from scratch, along with utilities for training and evaluation. This is a light weight implementation with performance comparable to scikit-learn's implementation.
+This package provides a Python implementation of a decision tree algorithm from scratch, along with training and evaluation utilities. This lightweight implementation has performance comparable to scikit-learn's implementation.
 
 ## Files
 
-DecisionTree.py: Contains the core classes and functions for building and using the decision tree model.
-utils.py: Provides helper functions for loading datasets, splitting data, calculating evaluation metrics, and comparing custom and scikit-learn implementations.    
+ - DecisionTree.py: Contains the core classes and functions for building and using the decision tree model.
+ - utils.py: Provides helper functions for loading datasets, splitting data, calculating evaluation metrics, and comparing custom and scikit-learn implementations.    
 
 ## Key Features
 
-- Custom implementation of a decision tree algorithm.
-- Supports both Gini impurity and entropy criteria for splitting.
-- Options to control maximum depth and minimum samples for splitting.
-- Functions for loading and processing various inbuilt datasets.
-- Comparison with scikit-learn's DecisionTreeClassifier in terms of accuracy, precision, recall, F1-score, time taken, and memory usage.
+ - Custom implementation of a decision tree algorithm.
+ - Supports both Gini impurity and entropy criteria for splitting.
+ - Options to control maximum depth and minimum samples for splitting.
+ - Functions for loading and processing various inbuilt datasets.
+ - Comparison with scikit-learn's DecisionTreeClassifier in terms of accuracy, precision, recall, F1-score, time taken, and memory usage.
 
 ## Usage
 
-Make sure the labels are numeric(Use label encoders).
+Make sure the labels are numeric(Use label encoder).
 
 ```python
 
