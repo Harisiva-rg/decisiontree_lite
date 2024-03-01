@@ -1,4 +1,4 @@
-## Decision Tree Implementation from Scratch
+## Decision Tree Implementation from Scratch ![PyPI](https://img.shields.io/pypi/v/decisiontree-lite?label=pypi%20package)
 
 ## Overview
 
